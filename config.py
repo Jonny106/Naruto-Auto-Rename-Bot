@@ -5,13 +5,13 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "23476863")
-    API_HASH  = os.environ.get("API_HASH", "69daa0835439c4211f34c2e9ad0acb5c")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8164412620:AAHs3-BJ5CFNcloB3Nr0KnxOf33MyN08IG0") 
+    API_ID    = os.environ.get("API_ID", "")
+    API_HASH  = os.environ.get("API_HASH", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
 
     # database config
     DB_NAME = os.environ.get("DB_NAME","Haruto75")     
-    DB_URL  = os.environ.get("DB_URL","mongodb+srv://Haruto75:Haruto75@cluster075.iqqwknk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster075")
+    DB_URL  = os.environ.get("DB_URL","")
     PORT = os.environ.get("PORT", 8080)
 
     # other configs
@@ -19,10 +19,10 @@ class Config(object):
     START_VID = os.environ.get("START_VID", "https://ar-hosting.pages.dev/1747560761459.mp4")
 
     START_PIC   = os.environ.get("START_PIC", "https://images.app.goo.gl/CZoLdnemZXJZeVSA6")
-    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '6497757690').split()]
-    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'Mythic_Bots,MythicBot_Support').split(',')
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002686116676"))
-    DUMP_CHANNEL = int(os.environ.get("DUMP_CHANNEL", "-1002629771463"))
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
+    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', '').split(',')
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    DUMP_CHANNEL = int(os.environ.get("DUMP_CHANNEL", ""))
 
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
